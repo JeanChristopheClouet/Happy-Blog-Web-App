@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iBlog</title>
+    <link type="stylesheet" href="/styles/styles.css">
+    <script>
+        // write the delete method for when the delete button is clicked
+        function delete_blog_post(post_title){
+            blog_t = blog_t.filter(item => item !== blog_t[index]);
+            blog_s = blog_s.filter(item => item !== blog_s[index]);
+            alert(`${post_title} has been deleted`)
+        }
+        // remove the element
+
+
+    </script>
+</head>
+<%- include("partials/header.ejs")%>
+
+<body>
+    <% if (locals.blog_s && locals.blog_t && locals.blog_t.length>0) {
+        %>
+        <h1>Here are your wonderful blog posts 📜</h1>
+        <%var n = Math.min(blog_s.length, blog_t.length)
+        for(var i= 0; i<n; i++){
+            
+        %>
+        <div >
+            <form action="/" method="POST">
+                <div class="container text-center">
+                    <div class="row align-items-center">
+                        <div class="col">
+                          <h3><a href="<%= blog_t[i]%>"><%=blog_t[i].replace(/_/g, " ")%></a></h3>  
+                        </div>
+                        <div class="col">
+                            <a href="<%= "edit-"+blog_t[i]%>"><button class="btn btn-outline-secondary btn-lg" type="button">Edit</button></a>
+                        </div>
+                        <div class="col">
+                            <input class="btn btn-outline-danger btn-lg" type="submit" value="Delete">
+                            </div>
+                    </div>
+                </div>
+
+                <label for="blog_index"></label>
+                <input type="text" name="blog_index" style="display: none;" value="<%=i%>">
+            </form>
+        </div>
+        
+        <br>
+       
+        
+    <%} } else{ %>
+    <h1>It doesn't seem like you have written anything...📍</h1>
+        
+        <img class="text-center" src="cute-emoji.webp">
+        <a class="text-center " href="/submit"><button class="btn btn-outline-dark btn-lg">Write a Blog Post</button></a>
+    <%}%>
+
+    <%- include("partials/footer.ejs")%>
+
+</body>
+</html>

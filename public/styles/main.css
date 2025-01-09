@@ -1,0 +1,68 @@
+h1, h3 {
+         text-align:center;
+         color: #AA5486; } 
+
+h1 {
+  margin-top:2%;
+}
+
+a{
+  color:#FC8F54;
+}
+
+form {
+    margin-top:7%;
+    margin-bottom:3%;
+    margin-left: 15%;
+    margin-right:15%;
+
+}
+
+header {
+  background-color: #FBF4DB;
+}
+.submissionfield { width: 300px; height: 390px; border: 1px solid #999999; padding: 5px; }
+
+.btn {
+    margin-top:5%;
+    
+}
+
+.bg-form{
+    background-color: #FDE7BB;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #AA5486, #FC8F54, #FDE7BB);
+    background-size: 180% 180%;
+    animation: gradient-animation 6s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    } 
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+
+img{
+  margin-top:2%;
+  margin-left:44%;
+  margin-right:5%;
+  height:150px;
+  width:170px;
+}
+
+li{
+  color:#FC8F54;
+}
+
+.navbar-button {
+  margin-left:40px
+}
